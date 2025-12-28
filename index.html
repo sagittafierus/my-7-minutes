@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Forever Girl</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #ffe4e1, #ffb6c1); color: #4a4a4a; scroll-behavior: smooth; overflow-x: hidden; }
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 20px; box-sizing: border-box; }
+        h1 { font-size: 2.5rem; color: #d63384; margin-bottom: 15px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        p { font-size: 1.2rem; line-height: 1.6; max-width: 600px; }
+        
+        /* Music Button */
+        #music-container { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+        .music-btn { background: #d63384; color: white; border: none; padding: 12px 24px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        /* Photo Gallery Card */
+        .gallery { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; }
+        .photo-card { width: 250px; background: white; padding: 10px; padding-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transform: rotate(-2deg); border-radius: 5px; transition: 0.3s; }
+        .photo-card:nth-child(even) { transform: rotate(2deg); }
+        .photo-card img { width: 100%; height: auto; display: block; border-radius: 2px; background: #fff; min-height: 150px; }
+
+        /* Quiz Container */
+        .game-container { background: rgba(255, 255, 255, 0.85); padding: 30px; border-radius: 25px; max-width: 500px; width: 90%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); min-height: 250px; display: flex; flex-direction: column; justify-content: center; }
+        .opt-btn { background: white; border: 2px solid #ffb6c1; padding: 12px; border-radius: 12px; cursor: pointer; margin: 8px 0; width: 100%; font-size: 1.1rem; transition: 0.2s; font-weight: 500; }
+        .opt-btn:hover { background: #d63384; color: white; border-color: #d63384; }
+        
+        .heart { color: #e74c3c; font-size: 60px; animation: beat 1s infinite; margin: 20px; }
+        @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+        .button { background-color: #d63384; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 30px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <div id="music-container">
+        <button class="music-btn" onclick="toggleMusic()" id="mBtn">🎵 Play Our Song</button>
+        <audio id="bgMusic" loop>
+            <source src="song.mp3" type="audio/mpeg">
+            <source src="song.m4a" type="audio/mp4">
+        </audio>
+    </div>
+
+    <section>
+        <h1>Happy New Year, My Love! 🎆</h1>
+        <p>You make every year better than the last. I'm so lucky to have you by my side as we start 2026.</p>
+        <div style="font-size: 0.9rem; margin-top: 40px; color: #d63384; font-weight: bold; letter-spacing: 2px;">SCROLL DOWN ❤️</div>
+    </section>
+
+    <section id="game-section">
+        <h1>Let's see how much you love me! 🥰</h1>
+        <div class="game-container">
+            <div id="question-area">
+                <p id="q-text" style="font-weight:bold; font-size: 1.3rem; color: #b02a6a; margin-bottom: 20px;">Setting up the game...</p>
+                <div id="options-btns"></div>
+            </div>
+            <div id="result-area" style="display:none;">
+                <h1 id="final-score" style="color:#d63384; font-size: 4rem; margin: 0;">0%</h1>
+                <p style="font-weight: bold; color: #b02a6a;">I knew it! You are my world! ❤️</p>
+                <p>Scroll down, there's more...</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>Just keep SHINING forever ✨</h1>
+        <div class="gallery">
+            <div class="photo-card">
+                <img src="k1.jpg" onerror="tryNext(this, 'k1', ['jpeg', 'png', 'JPG', 'JPEG'])">
+            </div>
+            <div class="photo-card">
+                <img src="k2.jpg" onerror="tryNext(this, 'k2', ['jpeg', 'png', 'JPG', 'JPEG'])">
+            </div>
+            <div class="photo-card">
+                <img src="k3.jpg" onerror="tryNext(this, 'k3', ['jpeg', 'png', 'JPG', 'JPEG'])">
+            </div>
+        </div>
+        <p style="margin-top: 40px;">You are the most beautiful person I know, inside and out.</p>
+    </section>
+
+    <section>
+        <h1>Be mine... Forever? ❤️</h1>
+        <p>This year isn't enough. I want a lifetime of New Years with you. I want to grow old laughing with you.</p>
+        <div class="heart">❤</div>
+        <p>Will you be my lovely happy girl for the rest of eternity?</p>
+    </section>
+
+    <section>
+        <h1>A Million Kisses & Hugs 💋🤗</h1>
+        <p>Since I can't be there to give them in person right this second...</p>
+        <div style="font-size: 5rem; margin: 20px 0;">😘💋💏</div>
+        <div style="font-size: 5rem; margin: 20px 0;">🫂🤗🫂</div>
+        <p>Sending you all my warmth, my love, and a thousand virtual hugs!</p>
+        <p style="font-weight: bold; color: #d63384;">I Love You More Than Words Can Say!</p>
+        <a href="index.html" class="button">See it all again ❤️</a>
+    </section>
+
+    <script>
+        // IMAGE FALLBACK
+        function tryNext(imgElement, baseName, extensions) {
+            if (extensions.length === 0) {
+                imgElement.alt = "Memory Not Found";
+                return;
+            }
+            let nextExt = extensions.shift();
+            imgElement.src = baseName + "." + nextExt;
+        }
+
+        // MUSIC LOGIC
+        function toggleMusic() {
+            var m = document.getElementById("bgMusic");
+            var btn = document.getElementById("mBtn");
+            if (m.paused) { 
+                m.play(); 
+                btn.innerText = "⏸ Pause Music"; 
+            } else { 
+                m.pause(); 
+                btn.innerText = "🎵 Play Our Song"; 
+            }
+        }
+
+        // QUIZ LOGIC
+        const questions = [
+            { q: "What is your favorite thing about us?", opts: ["Our deep talks", "How you make me laugh", "Just being near you"] },
+            { q: "How long do you want to be mine?", opts: ["Next 10 years", "Next 50 years", "Forever and ever!"] },
+            { q: "Do you miss me right now?", opts: ["Yes", "A lot!", "More than anything!"] }
+        ];
+        
+        let current = 0;
+        let score = 0;
+        
+        function loadQ() {
+            const qText = document.getElementById('q-text');
+            const container = document.getElementById('options-btns');
+            if (current < questions.length) {
+                qText.innerText = questions[current].q;
+                container.innerHTML = '';
+                questions[current].opts.forEach((o, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'opt-btn';
+                    btn.innerText = o;
+                    btn.onclick = () => {
+                        score += (index === 2 ? 34 : 33);
+                        current++;
+                        loadQ();
+                    };
+                    container.appendChild(btn);
+                });
+            } else {
+                document.getElementById('question-area').style.display = 'none';
+                document.getElementById('result-area').style.display = 'block';
+                document.getElementById('final-score').innerText = Math.min(score, 100) + "%";
+            }
+        }
+        window.onload = loadQ;
+    </script>
+</body>
+</html>
